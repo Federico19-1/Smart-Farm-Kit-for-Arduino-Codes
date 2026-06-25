@@ -1,6 +1,7 @@
-
 # 🌱 Keyestudio Smart Farm Kit — ESP32 IoT Workshop
-
+<img width="250" height="250" alt="Smart_Farm_Interface" src="https://github.com/user-attachments/assets/b7959bad-3ef4-49ee-93a7-0aad686cea17" />
+<img width="250" height="250" alt="unnamed" src="https://github.com/user-attachments/assets/1ad275f1-a713-4f4e-9a4c-6d9cca9b3f84" />
+>>>>>>> eb8999813babf0cc833607cc5e71f980df159323
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: ESP32](https://img.shields.io/badge/Platform-ESP32-red.svg)](https://www.espressif.com/en/products/socs/esp32)
