@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # 🌱 Keyestudio Smart Farm Kit - ESP32 IoT Workshop
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
