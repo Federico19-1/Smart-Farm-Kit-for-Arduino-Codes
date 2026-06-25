@@ -1,5 +1,5 @@
 # 🌱 Keyestudio Smart Farm Kit — ESP32 IoT Workshop
-<img width="300" height="300" alt="Smart_Farm_Interface" src="https://github.com/user-attachments/assets/b7959bad-3ef4-49ee-93a7-0aad686cea17" />
+<img width="250" height="250" alt="Smart_Farm_Interface" src="https://github.com/user-attachments/assets/b7959bad-3ef4-49ee-93a7-0aad686cea17" />
 
 
 
