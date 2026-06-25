@@ -90,25 +90,25 @@
 
 #define BUZZERPIN 16
  
-// Note della melodia di "Nella Vecchia Fattoria"
+// Sheet Music for “Old_MacDonald_Had_a_Farm”
 int melody[] = {
-  NOTE_C4, NOTE_C4, NOTE_C4, NOTE_G3, NOTE_A3, NOTE_A3, NOTE_G3,       // Nella vecchia fattoria
-  NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4,                         // IA-IA-OH!
+  NOTE_C4, NOTE_C4, NOTE_C4, NOTE_G3, NOTE_A3, NOTE_A3, NOTE_G3,       
+  NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4,                         
   
-  NOTE_G3, NOTE_G3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_G3, NOTE_A3, NOTE_A3, NOTE_G3, // Quante bestie ha zio Tobia
-  NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4,                         // IA-IA-OH!
+  NOTE_G3, NOTE_G3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_G3, NOTE_A3, NOTE_A3, NOTE_G3, 
+  NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4,                         
   
-  NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3,                         // C'è il cane: bau bau qui
-  NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3,                         // C'è il cane: bau bau là
-  NOTE_G3, NOTE_G3, NOTE_G3,                                           // Bau qui
-  NOTE_G3, NOTE_G3, NOTE_G3,                                           // Bau là
-  NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3,                // Sempre bau bau bau
+  NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3,                         
+  NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3,                         
+  NOTE_G3, NOTE_G3, NOTE_G3,                                           
+  NOTE_G3, NOTE_G3, NOTE_G3,                                           
+  NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3,                
   
-  NOTE_C4, NOTE_C4, NOTE_C4, NOTE_G3, NOTE_A3, NOTE_A3, NOTE_G3,       // Nella vecchia fattoria
-  NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4                          // IA-IA-OH!
+  NOTE_C4, NOTE_C4, NOTE_C4, NOTE_G3, NOTE_A3, NOTE_A3, NOTE_G3,    
+  NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4                          
 };
  
-// Durata delle note: 4 = quarto, 8 = ottavo, 2 = metà
+// Note durations: 4 = quarter note, 8 = eighth note, etc.:
 int noteDurations[] = {
   4, 4, 4, 4, 4, 4, 2,
   4, 4, 4, 4, 2,
@@ -127,58 +127,26 @@ int noteDurations[] = {
 };
  
 void setup() {
-  // Calcola automaticamente il numero di note totali presenti nell'array
+  // Calculate automatically the number of total notes present in the array
   int totalNotes = sizeof(melody) / sizeof(melody[0]);
 
-  // Itera sulle note della melodia:
+  // Iterate on the notes of the melody:
   for (int thisNote = 0; thisNote < totalNotes; thisNote++) {
    
-    // Calcola la durata della nota (1000 millisecondi divisi per il tipo di nota)
+    // Calculate the duration of the note (1000 milliseconds divided by the note type)
     int noteDuration = 1000 / noteDurations[thisNote];
     tone(BUZZERPIN, melody[thisNote], noteDuration);
    
-    // Pausa tra le note per distinguerle chiaramente (durata + 30%)
+    // Pause between notes to distinguish them clearly (duration + 30%)
     int pauseBetweenNotes = noteDuration * 1.30;
     delay(pauseBetweenNotes);
     
-    // Ferma l'emissione del suono:
+    // Stop the sound emission:
     noTone(BUZZERPIN);
   }
 }
  
 void loop() {
-  // La melodia viene eseguita una sola volta all'avvio.
+  // The melody plays only once at startup.
 }
 
-
-/*
-        Cambiamento codice sensore di movimento trig e echo Arduino
-
-
-#define Trigpin 12 //connect trig to io12
-#define Echopin 13 //connect echo to io13
-int duration,distance;
-
-void setup(){
-  Serial.begin(9600); //Set the baud rate to 9600
-  pinMode(Trigpin,OUTPUT);  //set trig pin to output mode
-  pinMode(Echopin,INPUT);   //set echo pin to input mode
-}
-void loop(){
-  digitalWrite(Trigpin,LOW);
-  delayMicroseconds(2);
-  digitalWrite(Trigpin,HIGH);
-  delayMicroseconds(10);	//Trigger the trig pin via a high level lasting at least 10us
-  digitalWrite(Trigpin,LOW);
-  duration = pulseIn(Echopin,HIGH);	//the time of high level at echo pin
-  distance = duration/58;		//convert into distance(cm)
-  delay(50);
-  if(distance > 40) {
-  Serial.print("no one is here\n");	//Serial monitor prints the value
-  }
-else{
-  Serial.print("distance:");	//Serial monitor prints the value
-  Serial.print(distance);
-  Serial.println("cm");
-}
-} */
